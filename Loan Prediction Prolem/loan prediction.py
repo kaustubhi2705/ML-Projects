@@ -10,32 +10,33 @@ X = train.iloc[:,0:11].values
 Y = train.iloc[:,11].values
 X_test = test.iloc[:,0:11].values
 
+#### WHEN YOU USE THE ORIGINAL DATASET.........
 # APPLYING LABEL ENCODER AND ONE HOT ENCODER TO TRAINING DATASET
-from sklearn.preprocessing import LabelEncoder, OneHotEncoder
-labelencoder_X = LabelEncoder()
+#from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+#labelencoder_X = LabelEncoder()
 
-X[: ,0] = labelencoder_X.fit_transform(X[: ,0].astype(str))
-X[: ,1] = labelencoder_X.fit_transform(X[: ,1].astype(str))
-X[: ,3] = labelencoder_X.fit_transform(X[: ,3].astype(str))
-X[: ,4] = labelencoder_X.fit_transform(X[: ,4].astype(str))
-X[: ,10] = labelencoder_X.fit_transform(X[: ,10].astype(str))
+#X[: ,0] = labelencoder_X.fit_transform(X[: ,0].astype(str))
+#X[: ,1] = labelencoder_X.fit_transform(X[: ,1].astype(str))
+#X[: ,3] = labelencoder_X.fit_transform(X[: ,3].astype(str))
+#X[: ,4] = labelencoder_X.fit_transform(X[: ,4].astype(str))
+#X[: ,10] = labelencoder_X.fit_transform(X[: ,10].astype(str))
 
-onehotencoder = OneHotEncoder()
-X = onehotencoder.fit_transform(X).toarray()
+#onehotencoder = OneHotEncoder()
+#X = onehotencoder.fit_transform(X).toarray()
 
 # APPLYING LABEL ENCODER AND ONEHOTENCODER TO TEST DATASET
-from sklearn.preprocessing import LabelEncoder, OneHotEncoder
-labelencoder_X_test = LabelEncoder()
+#from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+#labelencoder_X_test = LabelEncoder()
 
-X_test[: ,0] = labelencoder_X_test.fit_transform(X_test[: ,0].astype(str))
-X_test[: ,1] = labelencoder_X_test.fit_transform(X_test[: ,1].astype(str))
-X_test[: ,3] = labelencoder_X_test.fit_transform(X_test[: ,3].astype(str))
-X_test[: ,4] = labelencoder_X_test.fit_transform(X_test[: ,4].astype(str))
-X_test[: ,10] = labelencoder_X_test.fit_transform(X_test[: ,10].astype(str))
+#X_test[: ,0] = labelencoder_X_test.fit_transform(X_test[: ,0].astype(str))
+#X_test[: ,1] = labelencoder_X_test.fit_transform(X_test[: ,1].astype(str))
+#X_test[: ,3] = labelencoder_X_test.fit_transform(X_test[: ,3].astype(str))
+#X_test[: ,4] = labelencoder_X_test.fit_transform(X_test[: ,4].astype(str))
+#X_test[: ,10] = labelencoder_X_test.fit_transform(X_test[: ,10].astype(str))
 
 
-onehotencoder = OneHotEncoder()
-X_test = onehotencoder.fit_transform(X_test).toarray()
+#onehotencoder = OneHotEncoder()
+#X_test = onehotencoder.fit_transform(X_test).toarray()
 
 #DATA VISUALISATION
 train.plot(kind='box', subplots=True,  sharex=False, sharey=False)
