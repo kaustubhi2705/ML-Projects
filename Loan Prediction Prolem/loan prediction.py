@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 #importing dataset
 test = pd.read_csv('test.csv')
 train = pd.read_csv('train.csv')
-X = train.iloc[:,0:11].values
+X = train.iloc[:,0:11].values  #If taken original dataset then [:, 1:12]
 Y = train.iloc[:,11].values
 X_test = test.iloc[:,0:11].values
 
@@ -71,7 +71,7 @@ models.append(('SVM', SVC()))
 models.append(('RF', RandomForestClassifier()))
 models.append(('SVR',SVR()))
 models.append(('KNN',KNeighborsClassifier()))
-models.append(('GP', GaussianNB()))
+models.append(('GP', GaussianProcess()))
 # evaluate each model in turn
 results = []
 names = []
@@ -92,7 +92,6 @@ classifier.fit(X,Y)
 
 # PREDICTING THE DATA
 Y_pred = classifier.predict(X_test)
-np.reshape(-1,1)
 Y_pred.fit_transform(X_test)
 
 #COPYING PREDICTED DATA TO CSV FILE
